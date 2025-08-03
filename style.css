@@ -58,6 +58,7 @@ body {
 .navbar-blur {
   background-color: #fff;
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .navbar a {
@@ -522,17 +523,15 @@ section {
 .contacts {
   width: 100%;
   margin-top: 20rem;
-
 }
 .contacts .container-contacts {
   display: flex;
   gap: 4.5rem;
   max-width: 1400px;
   margin-top: 3rem;
-  
 }
 
-.contact{
+.contact {
   width: 40%;
 }
 
@@ -564,7 +563,7 @@ section {
   border-radius: 5px;
 }
 
-.contact-lists p{
+.contact-lists p {
   color: var(--dark-color);
 }
 
@@ -581,11 +580,9 @@ section {
   width: 50%;
 }
 
-.write-form p{
+.write-form p {
   color: var(--dark-color);
 }
-
-
 
 /* .form-contact{
   
@@ -626,10 +623,74 @@ section {
   display: inline-block;
 }
 
- .btn-write:hover {
+.btn-write:hover {
   background-color: var(--pink-color);
   color: var(--white-color);
   border: 1px solid var(--white-color);
+}
+
+/* Partie des logos des sponsors */
+.marque__inner {
+  display: flex;
+  width: max-content;
+  animation: marquee 15s linear infinite;
+  margin: 0 auto;
+}
+
+.marque__group {
+  display: flex;
+}
+
+.marque__group span {
+  margin: 0 1.5rem;
+  white-space: nowrap;
+  /* background: #000000; */
+  color: white;
+  padding: 4px 16px 4px 12px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  width: 300px;
+  height: 300px;
+}
+
+.marque__group span img {
+  width: 50%;
+  height: 200px;
+}
+
+.marque__group span .mama {
+  /* background-image: url(https://img.logo.dev/google.com?token=pk_Q0VqzppsTCqC37R0ng001A);
+  background-position: center;
+  background-size: cover; */
+  width: 100%;
+}
+
+/* https://img.logo.dev/google.com?token=pk_Q0VqzppsTCqC37R0ng004A */
+
+.sponsors {
+  margin: 200px auto;
+}
+
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+/* Animation des logos de sponsors */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Media queries */
@@ -695,6 +756,23 @@ section {
   }
 
   .right-about {
+    display: none;
+  }
+
+  .contact {
+    display: none;
+  }
+
+  .write-form {
+    margin: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  .write-form h3 {
+    display: none;
+  }
+  .write-form p {
     display: none;
   }
 }
